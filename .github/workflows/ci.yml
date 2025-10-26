@@ -18,6 +18,7 @@ jobs:
           node-version: '18'
       - run: npm install
       - run: npm run test
+      - run: npm run lint
   build:
     runs-on: ubuntu-latest
     if: ${{ github.repository == 'main'}}
@@ -26,4 +27,4 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '18'
-      - run: npm run lint
+      - run: npx react-native build-android
