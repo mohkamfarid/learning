@@ -1,0 +1,20 @@
+name: React Native Learning
+
+on:
+  push:
+    branches:
+      - 'main':
+      - '**'
+  pull:
+    branches:
+      - 'main':
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+        node-version: '18'
+      - run: npm install
+      - run: npm run test
