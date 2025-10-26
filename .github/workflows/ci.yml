@@ -3,11 +3,11 @@ name: React Native Learning
 on:
   push:
     branches:
-      - main
+      - master
       - '**'
   pull_request:
     branches:
-      - main
+      - master
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -21,7 +21,7 @@ jobs:
       - run: npm run lint
   build:
     runs-on: ubuntu-latest
-    if: ${{ github.repository == 'main'}}
+    if: ${{ github.repository == 'master'}}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
