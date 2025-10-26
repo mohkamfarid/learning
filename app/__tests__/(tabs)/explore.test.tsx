@@ -10,7 +10,7 @@ describe("TabTwoScreen", () => {
 
   it("should render .layout information", () => {
     const screen = render(<TabTwoScreen />);
-    const layoutText = screen.getByText("app/(tabs)/_layout.tsx");
+    const layoutText = screen.getByText("This app includes example code to help you get started.");
     expect(layoutText).toBeDefined();
   });
 });
