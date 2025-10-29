@@ -22,8 +22,6 @@ jobs:
   build_android:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/master'
-    env:
-      EXPO_TOKEN: ${{secrets.GITHUB_TOKEN}}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -33,4 +31,3 @@ jobs:
       - run: npm install -g eas-cli
       - run: eas login --token ${{secrets.EXPO_TOKEN}}
       - run: eas build --platform android
-      - run: echo 'EXPO_TOKEN'
